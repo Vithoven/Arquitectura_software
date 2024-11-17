@@ -3,17 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gastos Pendientes</title>
+    <title>Gastos pendientes</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='pendientes.css') }}">
 </head>
 <body>
-    <h1>Gastos Pendientes</h1>
-    <ul>
-        {% for gasto in pendientes %}
-            <li>
-                {{ gasto.descripcion }} - {{ gasto.monto }} - {{ gasto.mes }}/{{ gasto.anio }}
-            </li>
-        {% endfor %}
-    </ul>
+    <h1>Gastos pendientes</h1>
+    
+    {% if pendientes %}
+    <table>
+        <thead>
+            <tr>
+                <th>Descripción</th>
+                <th>Monto</th>
+                <th>Mes/Año</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for gasto in pendientes %}
+            <tr>
+                <td>{{ gasto.descripcion }}</td>
+                <td>{{ gasto.monto }}</td>
+                <td>{{ gasto.mes }}/{{ gasto.anio }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No hay gastos pendientes.</p>
+    {% endif %}
+    
     <a href="/">Volver al inicio</a>
 </body>
 </html>
