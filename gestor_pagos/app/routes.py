@@ -2,6 +2,7 @@ from flask import Blueprint, jsonify, request
 from app import db
 from app.models import Residente, GastoComun, Pago
 from datetime import datetime
+from flask import Blueprint, render_template
 
 main_bp = Blueprint('main', __name__)
 
@@ -67,3 +68,7 @@ def listar_pendientes():
         "mes": gasto.mes,
         "anio": gasto.anio
     } for gasto in pendientes]), 200
+
+@main_bp.route('/')
+def index():
+    return render_template('index.html')
