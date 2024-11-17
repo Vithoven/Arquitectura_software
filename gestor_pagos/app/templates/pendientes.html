@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gastos Pendientes</title>
+</head>
+<body>
+    <h1>Gastos Pendientes</h1>
+    <ul>
+        {% for gasto in pendientes %}
+            <li>
+                {{ gasto.descripcion }} - {{ gasto.monto }} - {{ gasto.mes }}/{{ gasto.anio }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Volver al inicio</a>
+</body>
+</html>
