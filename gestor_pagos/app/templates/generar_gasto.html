@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generar Gastos Comunes</title>
+    <title>Generar gastos comunes</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='generar_gasto.css') }}">
 </head>
 <body>
     <h1>Generar Gastos Comunes</h1>
@@ -21,13 +22,13 @@
 
     <form action="/gastos/generar" method="post">
         <label for="mes">Mes:</label>
-        <input type="number" id="mes" name="mes" required><br>
+        <input type="number" id="mes" name="mes" required>
         <label for="anio">Año:</label>
-        <input type="number" id="anio" name="anio" required><br>
+        <input type="number" id="anio" name="anio" required>
         <label for="monto">Monto:</label>
-        <input type="number" id="monto" name="monto" required><br>
+        <input type="number" id="monto" name="monto" required>
         <button type="submit">Generar</button>
+        <button class="secondary" type="button" onclick="location.href='/'">Volver al inicio</button>
     </form>
-    <a href="/">Volver al inicio</a>
 </body>
 </html>
