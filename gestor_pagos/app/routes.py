@@ -1,7 +1,7 @@
 import logging
 from flask import Blueprint, jsonify, request, render_template, redirect, url_for, flash
 from app import db
-from app.models import Residente, GastoComun, Pago, Departamento
+from app.models.models import Residente, GastoComun, Pago, Departamento
 from datetime import datetime
 
 logging.basicConfig(level=logging.INFO)

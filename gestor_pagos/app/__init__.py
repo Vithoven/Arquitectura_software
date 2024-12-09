@@ -7,7 +7,8 @@ db = SQLAlchemy()
 migrate = Migrate()
 
 def create_app():
-    app = Flask(__name__)
+    # Cambiar 'templates' por 'views' para indicar la nueva carpeta de plantillas
+    app = Flask(__name__, template_folder='views')  # Cambiar 'templates' a 'views'
 
     # Set the SECRET_KEY for sessions and flash messages
     app.config['SECRET_KEY'] = os.urandom(24)  # Generates a random secret key
