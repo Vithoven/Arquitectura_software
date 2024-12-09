@@ -4,7 +4,6 @@ from app import db
 from app.models import Residente, GastoComun, Pago, Departamento  # Asegúrate de importar Departamento
 from datetime import datetime
 
-# Configuración del registro de logs
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
