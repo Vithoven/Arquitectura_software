@@ -1,11 +1,8 @@
 from app import db
 
 class Residente(db.Model):
-<<<<<<< HEAD
     run = db.Column(db.Integer, primary_key=True)
-=======
     run = db.Column(db.Integer, primary_key=True)  # Clave primaria: RUN del residente
->>>>>>> 24dc114889c9691c9f0699da0873b614f1657732
     nombre = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
 
