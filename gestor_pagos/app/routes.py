@@ -1,7 +1,7 @@
 import logging
 from flask import Blueprint, jsonify, request, render_template, redirect, url_for, flash
 from app import db
-from app.models import Residente, GastoComun, Pago
+from app.models import Residente, GastoComun, Pago, Departamento  # Asegúrate de importar Departamento
 from datetime import datetime
 
 # Configuración del registro de logs
@@ -81,8 +81,22 @@ def pagar_gasto():
 @main_bp.route('/gastos/pendientes', methods=['GET'])
 def listar_pendientes():
     try:
-        logger.info("Obteniendo los gastos pendientes")
-        pendientes = GastoComun.query.filter_by(estado="Pendiente").all()
+        logger.info("Obteniendo los gastos pendientes con información del departamento")
+        
+        # Realizar el join entre GastoComun y Departamento
+        pendientes = db.session.query(
+            GastoComun.descripcion,
+            GastoComun.monto,
+            GastoComun.mes,
+            GastoComun.anio,
+            Departamento.num_depto  # Obtener el número de departamento
+        ).join(
+            Departamento,  # Relacionamos la tabla GastoComun con Departamento
+            GastoComun.residente_id == Departamento.run_propietario  # Relación entre las tablas
+        ).filter(
+            GastoComun.estado == "Pendiente"  # Filtramos solo los gastos pendientes
+        ).all()
+
         logger.info(f"Se encontraron {len(pendientes)} gastos pendientes")
         return render_template('pendientes.html', pendientes=pendientes)
     except Exception as e:

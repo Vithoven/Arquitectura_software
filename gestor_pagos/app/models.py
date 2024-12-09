@@ -22,3 +22,9 @@ class Pago(db.Model):
     monto = db.Column(db.Float, nullable=False)
     fecha_pago = db.Column(db.DateTime, nullable=False)
     gasto_id = db.Column(db.Integer, db.ForeignKey('gasto_comun.id'), nullable=False)
+
+class Departamento(db.Model):
+    num_depto = db.Column(db.Integer, primary_key=True)
+    nombre_propietario = db.Column(db.String(50), nullable=False)
+    run_propietario = db.Column(db.Integer, db.ForeignKey('residente.id'), nullable=False)
+    propietario = db.relationship('Residente', backref='departamentos', lazy=True)
