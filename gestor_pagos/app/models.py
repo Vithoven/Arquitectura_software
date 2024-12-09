@@ -26,5 +26,5 @@ class Pago(db.Model):
 class Departamento(db.Model):
     num_depto = db.Column(db.Integer, primary_key=True)
     nombre_propietario = db.Column(db.String(50), nullable=False)
-    run_propietario = db.Column(db.Integer, db.ForeignKey('residente.run'), nullable=False)
+    run_propietario = db.Column(db.Integer, db.ForeignKey('residente.id'), nullable=False)
     propietario = db.relationship('Residente', backref='departamentos', lazy=True)
