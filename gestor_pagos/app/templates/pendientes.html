@@ -13,27 +13,19 @@
     <table>
         <thead>
             <tr>
-<<<<<<< HEAD
-                <th>Num.depto</th>
-=======
-<<<<<<< HEAD
-                <th>Num.Depto</th>
->>>>>>> 24dc114889c9691c9f0699da0873b614f1657732
+                <th>Num. Depto</th>
                 <th>Descripción</th>
-=======
-                <th>Num-depto</th>
-                <th>Descripcion</th>
->>>>>>> 2d275cbbf34081f624eed1372a6ebde307026bbd
                 <th>Monto</th>
-                <th>Mes/Año</th>
+                <th>Fecha de Vencimiento</th>
             </tr>
         </thead>
         <tbody>
             {% for gasto in pendientes %}
             <tr>
-                <td>{{ gasto.descripcion }}</td>
-                <td>{{ gasto.monto }}</td>
-                <td>{{ gasto.mes }}/{{ gasto.anio }}</td>
+                <td>{{ gasto.num_depto }}</td> <!-- Número de departamento -->
+                <td>{{ gasto.descripcion }}</td> <!-- Descripción del gasto -->
+                <td>{{ gasto.monto }}</td> <!-- Monto del gasto -->
+                <td>{{ gasto.vencimiento }}</td> <!-- Fecha de vencimiento -->
             </tr>
             {% endfor %}
         </tbody>
