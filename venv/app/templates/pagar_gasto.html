@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar pago</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='pagar_gasto.css') }}">
+</head>
+<body>
+    <h1>Registrar Pago de gasto común</h1>
+    <form action="/gastos/pagar" method="post">
+        <label for="gasto_id">Ingrese num departamento:</label>
+        <input type="number" id="gasto_id" name="gasto_id" required>
+        <label for="fecha_pago">Fecha de pago:</label>
+        <input type="date" id="fecha_pago" name="fecha_pago" required>
+        <button type="submit">Registrar pago</button>
+        <button class="secondary" type="button" onclick="location.href='/'">Volver al inicio</button>
+    </form>
+</body>
+</html>

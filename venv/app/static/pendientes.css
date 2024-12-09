@@ -1,0 +1,75 @@
+/* Estilo general para el cuerpo */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #eef2f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Contenedor principal */
+  h1 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 15px;
+    background-color: #0074d9; /* Azul */
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Tabla de gastos */
+  table {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px 0;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  /* Encabezados de tabla */
+  table th {
+    background-color: #0074d9; /* Azul */
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    font-size: 1rem;
+  }
+  
+  /* Celdas de tabla */
+  table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  /* Filas alternadas */
+  table tr:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+  
+  /* Enlace "Volver al inicio" */
+  a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #0074d9;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  a:hover {
+    color: #0056a3;
+  }  
